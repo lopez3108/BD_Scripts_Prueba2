@@ -1,10 +1,9 @@
 ﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
 GO
-
 -- 2025-09-05JF/6722: Contracts deben poder quedar en status PENDING cuando se crean
 -- 2025-10-09 JF/6786: Ajuste para contratos cerrados el mismo día de creación
 -- 2025-10-20 JF/6776: Permitir cerrar contratos antes de la fecha final
--- 2025-11-06 JF/6776: prueba de cambios FELIPE oquendo lopez
+-- 2025-11-06 JF/6776: prueba de cambios FELIPE oquendo 
 
 CREATE PROCEDURE [dbo].[sp_CloseContract] (@ContractId INT = NULL,
 @SetAvailableDeposit BIT,
