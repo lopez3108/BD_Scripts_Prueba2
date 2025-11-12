@@ -1,0 +1,7 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_GetSumFooterPayroll]
+
+AS
+SELECT * FROM dbo.PayrollOthers po 
+GO

@@ -1,0 +1,9 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_GetAllDias]
+AS
+     BEGIN
+         SELECT* FROM dbo.Days
+        
+     END;
+GO

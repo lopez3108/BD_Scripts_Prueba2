@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[FraudAlert] (
+  [FraudId] [int] IDENTITY,
+  [Maker] [varchar](80) NULL,
+  [MakerAddress] [varchar](100) NULL,
+  [Account] [varchar](50) NULL,
+  [NumberRouting] [varchar](15) NULL,
+  [CheckNumber] [varchar](50) NULL,
+  [CheckType] [varchar](50) NULL,
+  [Country] [varchar](50) NULL,
+  [IdentificacionNumber] [varchar](30) NULL,
+  [DOB] [datetime] NULL,
+  [TransactionDate] [date] NULL,
+  [CreatedName] [varchar](80) NULL,
+  [CreationDate] [datetime] NULL,
+  [LastUpdatedName] [varchar](80) NULL,
+  [LastUpdatedOn] [datetime] NULL,
+  [Telephone] [varchar](20) NULL,
+  [ClientAddress] [varchar](100) NULL,
+  [ClientName] [varchar](50) NULL,
+  [FileNumber] [varchar](20) NULL,
+  [AgencyId] [int] NULL,
+  [AgencyName] [varchar](200) NULL,
+  [StateAbreviation ] [varchar](5) NULL,
+  [State] [varchar](255) NULL,
+  [BankName] [varchar](50) NULL,
+  [CreatedBy] [int] NULL,
+  [Foto] [varchar](50) NULL,
+  [IsNotFraud] [bit] NULL DEFAULT (0),
+  CONSTRAINT [PK_FraudAlert_FraudId] PRIMARY KEY CLUSTERED ([FraudId])
+)
+ON [PRIMARY]
+GO

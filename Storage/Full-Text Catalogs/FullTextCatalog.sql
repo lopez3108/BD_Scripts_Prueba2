@@ -1,0 +1,3 @@
+﻿CREATE FULLTEXT CATALOG [FullTextCatalog]
+  AS DEFAULT
+GO

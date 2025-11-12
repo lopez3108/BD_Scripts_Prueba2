@@ -1,0 +1,3 @@
+﻿CREATE USER [superadmin]
+  WITHOUT LOGIN
+GO

@@ -1,0 +1,30 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+
+
+CREATE PROCEDURE [dbo].[sp_ValidateDeleteReturnELS]
+ (
+	  @ReturnsELSId INT,
+	  @StatusReturnsELS VARCHAR(10)
+
+    )
+AS 
+
+BEGIN
+
+IF (NOT EXISTS(SELECT  ReturnsELSId FROM ReturnsELS WHERE ReturnsELSId =  @ReturnsELSId))
+BEGIN
+
+SELECT -1
+
+END
+ELSE
+
+BEGIN
+IF(@StatusReturnsELS  = 'C02')
+SELECT -2
+
+END
+
+END
+GO

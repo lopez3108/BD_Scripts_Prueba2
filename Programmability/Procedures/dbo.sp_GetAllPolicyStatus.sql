@@ -1,0 +1,6 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_GetAllPolicyStatus]
+AS 
+  SELECT * FROM dbo.PolicyStatus ps
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [branch5751]
+  WITHOUT LOGIN
+GO

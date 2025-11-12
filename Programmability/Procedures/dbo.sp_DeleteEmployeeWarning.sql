@@ -1,0 +1,17 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+--CREATED BY: JOHAN
+--CREATED ON: 18-4-2023
+--ELIMINA INFORMACION PARA EMPLOYEEWARNING
+CREATE PROCEDURE [dbo].[sp_DeleteEmployeeWarning]
+	@EmployeeWarningId int
+AS
+BEGIN
+
+	DELETE
+	FROM dbo.EmployeeWarning
+	WHERE EmployeeWarningId = @EmployeeWarningId
+
+
+END
+GO

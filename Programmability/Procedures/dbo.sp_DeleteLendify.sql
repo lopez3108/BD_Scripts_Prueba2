@@ -1,0 +1,14 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_DeleteLendify]
+@LendifyId INT
+AS
+BEGIN
+
+	DELETE FROM [dbo].[Lendify]
+	WHERE LendifyId = @LendifyId
+
+	SELECT 1
+
+END;
+GO

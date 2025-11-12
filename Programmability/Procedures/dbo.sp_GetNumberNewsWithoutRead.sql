@@ -1,0 +1,10 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_GetNumberNewsWithoutRead]
+ (@UserId AS INT)
+AS 
+BEGIN
+SELECT COUNT(*) NewsCount
+  FROM dbo.News WHERE NewsId NOT IN (SELECT NewsId FROM NewsXUsers WHERE UserId = @UserId )
+	END
+GO

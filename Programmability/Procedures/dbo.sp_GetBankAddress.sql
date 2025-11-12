@@ -1,0 +1,11 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_GetBankAddress]
+	@BankId int
+AS
+BEGIN
+    SELECT *
+    FROM AddressXBank
+	WHERE BankId = @BankId
+END
+GO

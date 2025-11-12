@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[Payrolls] (
+  [PayrollId] [int] IDENTITY,
+  [UserId] [int] NOT NULL,
+  [FromDate] [datetime] NOT NULL,
+  [ToDate] [datetime] NOT NULL,
+  [RegularHours] [decimal](18, 2) NOT NULL,
+  [RegularHoursUsd] [decimal](18, 2) NOT NULL,
+  [OvertimeHours] [decimal](18, 2) NOT NULL,
+  [OvertimeHoursUsd] [decimal](18, 2) NOT NULL,
+  [Missing] [decimal](18, 2) NOT NULL,
+  [Others] [decimal](18, 2) NOT NULL,
+  [VacationHours] [decimal](18, 2) NOT NULL CONSTRAINT [DF_Payrolls_Vacations] DEFAULT (0),
+  [VacationHoursUsd] [decimal](18, 2) NOT NULL,
+  [TotalPayment] [decimal](18, 2) NOT NULL,
+  [ADP] [decimal](18, 2) NOT NULL,
+  [CASH] [decimal](18, 2) NOT NULL,
+  [Taxes] [decimal](18, 2) NOT NULL,
+  [EmployeeTaxes] [decimal](18, 2) NOT NULL,
+  [PaidOn] [datetime] NOT NULL,
+  [PaidBy] [int] NOT NULL,
+  [SalaryType] [varchar](10) NOT NULL,
+  [SalaryUsd] [decimal](18, 2) NOT NULL,
+  [PeriodPayment] [varchar](15) NULL,
+  [HoursPromedial] [decimal](18, 1) NULL,
+  [AgencyId] [int] NULL,
+  [PaymentType] [varchar](10) NOT NULL DEFAULT ('HOURLY'),
+  [LeaveHours] [decimal](18, 2) NOT NULL DEFAULT (0),
+  [LeaveHoursUsd] [decimal](18, 2) NULL,
+  CONSTRAINT [PK_Payrolls] PRIMARY KEY CLUSTERED ([PayrollId])
+)
+ON [PRIMARY]
+GO

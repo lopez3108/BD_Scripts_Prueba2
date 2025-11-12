@@ -1,0 +1,11 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_GetAllSellerStatus]
+ 
+AS 
+
+BEGIN
+SELECT *
+FROM [dbo].SellerStatus
+END
+GO

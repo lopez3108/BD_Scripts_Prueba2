@@ -1,0 +1,30 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetTrainingMultimedia] @TrainingId          INT           = NULL,
+                                                 @TrainingQuestionsId INT           = NULL,
+                                                 @Url                 VARCHAR(1000) = NULL
+AS
+     BEGIN
+         DECLARE @FullUrl VARCHAR(2000);
+         SET @FullUrl = @Url+'/Compliance/Multimedia/TrainingMedia/';
+         SELECT *,
+                --CASE
+                --    WHEN IsImage = 1
+                --    THEN 'true'
+                --    ELSE 'false'
+                --END AS IsImage,
+                IsImage,
+                @FullUrl+CAST(TrainingId AS VARCHAR(100))+'/'+DocumentNameMultimedia+'/'+DocumentNameMultimedia AS UrlDocument,
+                CASE
+                    WHEN IsImage = 1
+                    THEN @FullUrl+CAST(TrainingId AS VARCHAR(100))+'/'+DocumentNameMultimedia+'/'+DocumentNameMultimedia
+                    ELSE @Url+'/files/media/icon_video.png'
+                END AS UrlThumbnail
+       FROM [dbo].TrainingMultimedia
+         WHERE(TrainingId = @TrainingId
+               OR @TrainingId IS NULL)
+              AND (TrainingQuestionsId IS NULL
+                 );
+     END;
+GO

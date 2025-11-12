@@ -1,0 +1,19 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+
+--CREATED BY: JOHAN
+--CREATED ON: 30-8-2023
+--ELIMINA FILES FROM FRAUD ALERT
+CREATE PROCEDURE [dbo].[sp_DeleteFraudFile]
+	@FraudDocumentId int
+AS
+BEGIN
+
+	DELETE
+	FROM dbo.FraudFiles
+	WHERE FraudDocumentId = @FraudDocumentId
+
+
+END
+
+GO

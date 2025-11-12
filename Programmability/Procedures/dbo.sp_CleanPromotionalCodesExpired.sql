@@ -1,0 +1,22 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[sp_CleanPromotionalCodesExpired](@Date DATETIME)
+AS
+     BEGIN
+--DECLARE @Date DATETIME ; 
+--SET @Date = GETDATE()
+BEGIN TRANSACTION;
+IF CAST(@Date AS DATE) = CAST(GETDATE() AS DATE)
+BEGIN
+DELETE ps
+  FROM PromotionalCodesStatus ps
+  INNER JOIN PromotionalCodes p
+    ON PS.PromotionalCodeId = P.PromotionalCodeId
+WHERE CAST(P.ToDate AS DATE) < CAST(@Date AS DATE)
+  AND ps.Used = 0;
+END
+SELECT
+  1;
+COMMIT TRANSACTION;
+END;
+GO
