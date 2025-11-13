@@ -12,7 +12,8 @@ CREATE PROCEDURE [dbo].[sp_CloseContract] (@ContractId INT = NULL,
 @ClosedBy INT,
 @RentValue DECIMAL(18, 2) = NULL,
 @MoveInFee DECIMAL(18, 2) = NULL,
-@ClosedDate DATETIME
+@ClosedDate DATETIME,
+@ClosedDate1 DATETIME
 )
 
 AS
